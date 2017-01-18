@@ -8,6 +8,11 @@ Files specifying a namespace, a class definition, or a function should share the
 
 While there is little advantage to using file extension convention over another, the convention should be used consistently throughout all NJOY21 projects. NJOY21 projects use the following conventions:
 
+### C
+
+- Header files must use the `.h` suffix
+- Source files must use the `.c` suffix
+
 ### C\+\+
 
 - Header files must use the `.hpp` suffix
@@ -26,8 +31,8 @@ NJOY21 has a fine-grained distribution of source code between source files.
 	- definitions for any constants immediately enclosed in the namespace
 	- a faux forward declaration of any nested namespace
 - For each class defined as part of a project, a header file should be provided specifying any class fields and a function signature for any class methods.
-- Functions requiring greater than 1 logical line of code to define should not be implemented in the header file, if possible.
-- For each function **name** within an *effective* namespace (a class acts as an effective namespace for its fields and methods), an implementation file (i.e., `.cpp`) is provided.
+- Functions requiring greater than 1 logical line of code to define should not be implemented in the header file, if possible. Projects/libraries that are header-only are exempt from this as it doesn't really make sense. 
+- For each function **name** within an *effective* namespace (a class acts as an effective namespace for its fields and methods), an implementation file (i.e., `.cpp`) is provided. Projects/libraries that are header-only are exempt from this as it doesn't really make sense. 
 - For each **name** within an *effective* namespace, a corresponding implementation file (i.e., `.cpp`) is provided with unit tests for each function of that name. For naming conventions for these files, see the [Directory Structure] section below.
 
 Distributing source code in this fashion offers a number of advantages, including:
